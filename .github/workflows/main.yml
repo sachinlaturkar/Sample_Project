@@ -17,11 +17,11 @@ jobs:
         uses: google-github-actions/setup-gcloud@master
         with:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          project_id: gcp-demo-project-415805
           export_default_credentials: true
 
       - name: Configure gcloud CLI
-        run: gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
+        run: gcloud config set project gcp-demo-project-415805
 
       - name: Create App Engine on GCP
         run: gcloud app create --region=us-east4
